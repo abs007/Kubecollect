@@ -60,6 +60,8 @@ var CheckCmd = &cobra.Command{
 					log.Fatal("Kubeconfig file not found. Program will exit.")
 				}
 			}
+		} else {
+			log.Print("Using kubeconfig file from the path provided")
 		}
 
 		if err := readData(kubeconfig, namespaces); err != nil {
@@ -156,7 +158,7 @@ func readData(kubeconfig string, namespaces []string) error {
 		table.Append(row)
 	}
 
-	table.Render() // Send output
+	table.Render() // Create Table output
 
 	return nil
 }

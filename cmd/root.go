@@ -25,4 +25,6 @@ func Execute() {
 
 func init() {
 	rootCmd.AddCommand(check.CheckCmd)
+	// Hide the default "completion" sub-command
+	rootCmd.CompletionOptions.HiddenDefaultCmd = true
 }
